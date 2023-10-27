@@ -1,0 +1,447 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --main-color: #10cab7;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small */
+@media (min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+/* medium */
+@media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+/* large  */
+@media (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* start header */
+.header{
+    padding: 20px;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .container .logo{
+    width: 60px;
+}
+.header .container .links {
+    position: relative;
+}
+.header .container .links .icon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 30px;
+}
+.header .container .links .icon span{
+    height: 3px;
+    background-color: #333;
+    margin-bottom: 5px;
+}
+.header .container .links .icon span:first-child{
+    width: 100%;
+}
+.header .container .links .icon span:nth-child(2){
+    width: 60%;
+    transition: 0.4s;
+}
+.header .container .links .icon span:last-child{
+    width: 100%;
+}
+.header .container .links .icon:hover span:nth-child(2){
+    width: 100%;
+}
+.header .links ul {
+    list-style: none;
+    background-color: #f6f6f6;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px );
+    width: 200px;
+    display: none;
+}
+.header .container .links:hover ul {
+    display: block;
+}
+.header .links ul::before{
+    content: "";
+    border-style: solid;
+    border-width: 10px;
+    position: absolute;
+    border-color: transparent transparent #f6f6f6 transparent;
+    right: 5px;
+    top: -20px;
+
+}
+.header .links ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+     padding: 15px;
+     transition: 0.4s;
+}
+.header .links ul li a:hover{
+    padding-left: 25px;
+}
+.header .links ul li:not(:last-child) a{
+    border-bottom: 2px solid #333;
+}
+/* end header */
+/* start landing */
+.landing {
+    background-image: url(../imag/landing.jpg);
+    min-height: calc( 100vh - 64px);
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+}
+.landing .text {
+ position: absolute;
+ top: 50%;
+ text-align: center;
+ left: 50%;
+ transform: translate(-50% , -50%);
+ width: 320px;
+ max-width: 100%;
+}
+.landing .text h2 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--main-color);
+}
+.landing .text p{
+    font-size: 19px;
+    line-height: 1.8;
+    color: #333;
+}
+/* end landing */
+/* start feuters */
+.feuters {
+    padding: 60px 0;
+    background-color: #f6f6f6;
+}
+.feuters .container {
+    display: grid;
+    grid-template-columns:  repeat(auto-fill , minmax(300px , 1fr));
+    
+}
+.feuters .feut{
+    text-align: center;
+    
+}
+.feuters .feut i {
+    font-size: 40px;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+.feuters .feut h3 {
+     font-weight: 800;
+    margin: 30px 0;
+}
+.feuters .feut p {
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;;
+}
+/* end feuters */
+ /* start Services  */
+/* start main-heading */
+.main-heading {
+text-align: center;
+ 
+
+}
+.main-heading h2 {
+color: #ebeced;
+font-size: 100px;
+font-weight: 800;
+letter-spacing: -3px; 
+}
+.main-heading p{
+    margin: -30px 0 0;
+    font-size: 20px;
+    color: #797979;
+}
+@media (max-width:767px){
+    .main-heading h2{
+        font-size: 70px;
+    }
+
+}
+/* end main-heading */
+.Services {
+    padding: 60px 0;
+}
+.Services .container .Services-contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+   margin-top: 100px;
+}
+.Services-contact .col .row{
+    display: flex;
+    margin-bottom: 50px;
+    gap: 30px;
+    
+}
+.Services-contact .col .row i {
+    font-size:25px;
+    color: var(--main-color);
+   
+}
+.Services-contact .col .row .text h3 {
+margin-bottom: 20px;
+}
+.Services-contact .col .row .text p {
+    color: #2c4755;
+    line-height: 1.6;
+}
+.Services-contact .col .imag{
+    position: relative;
+    text-align: center;
+}
+.Services-contact .col img{
+     width: 260px;
+}
+.Services-contact .col .imag::before{
+ content: "";
+    background-color:  #2c4755;
+    width: 100px;
+    height: calc(100% + 100px);
+    top: -50px;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+@media (max-width:767px){
+    .Services .container .Services-contact{
+        text-align: center;
+    }
+    .Services-contact .col .row {
+        display: block;
+    }
+    .Services-contact .col .row i {
+        margin-bottom: 10px;
+    }
+    .Services-contact .col .imag::before{
+        display: none;
+    }
+
+}
+
+ /* end Services  */
+ /* start Portfolio */
+.portfolio {
+    background-color: #f6f6f6;
+    padding: 60px 0;
+}
+.portfolio .container .protfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+    margin-top: 100px;
+    
+
+}
+.portfolio .container .protfolio-content .col {
+    background-color: #fff;
+}
+.portfolio .container .protfolio-content .col img {
+    max-width: 100%;
+}
+.portfolio .container .protfolio-content .col .text{
+    padding: 18px;
+}
+.portfolio .container .protfolio-content .col .text h4{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.portfolio .container .protfolio-content .col .text p{
+    line-height: 1.6;
+    color: #333;
+}
+ /* end Portfolio*/
+ /* start about */
+ .about{
+    padding:60px 0;
+ }
+ .about .container .about-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    align-items: center;
+ }
+ .about .container .about-content .col .imag img {
+    height: 380px;
+ }
+ .about .container .about-content .col2{
+    width: 55%;
+ }
+ .about .container .about-content .col2 p {
+    line-height: 1.8;
+
+}
+.about .container .about-content .col2 p:first-child{
+    font-weight: bold;
+}
+.about .container .about-content .col2 p:last-child{
+    color: #333;
+}
+ .about .container .about-content .col2 span{
+    height: 2px;
+    width: 50%;
+    background-color: var(--main-color);
+    display: block;
+    margin: 60px 0;
+ }
+ @media (max-width:767px){
+    .about .container .about-content {
+         display: block;
+      text-align: center;
+    }
+    .about .container .about-content .col2 {
+        width: fit-content;
+        margin-top: 40px;
+    }
+
+ }
+ /* end about */
+ /* start contact */
+ .contact {
+    padding: 60px 0;
+    background-color: #f6f6f6;
+ }
+ .contact .container .contact-conten{
+    text-align: center;
+    margin-top: 100px;
+ }
+ .contact .container .contact-conten h2 {
+    font-size: 35px;
+    font-weight: 800;
+    color: #2c4755;
+    letter-spacing: -2px;
+    
+ }
+ .contact .container .contact-conten a {
+    display: block;
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--main-color);
+    text-decoration: none;
+     margin: 15px 0;
+
+ }
+  .contact .container .contact-conten .social {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+ 
+  }
+  .contact .container .contact-conten .social a i{
+    padding: 0 5px;
+    font-size: 18px;
+    color: #333;
+  }
+  @media (max-width:767px){
+     .contact .container .contact-conten h2 {
+        font-size: 22px;
+     }
+      .contact .container .contact-conten a {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+  }
+ /* end contact */
+/* <!-- start footer --> */
+.footer{
+    background-color: #2c4755;
+    padding: 28px;
+    text-align: center;
+}
+.footer .container p {
+    font-size: 18px;
+    color: #fff;
+}
+.footer .container p span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+ /* <!-- end footer --> */
+
+.box-settings{
+    height: 100vh;
+    position:fixed;
+    background-color: #10cab783;
+    width: 200px;
+    transition: 0.5s;
+   
+ 
+}
+.box-settings.on{
+    left: -200px;
+}
+.box-settings.of {
+    left: 0;
+}
+.box-settings .container {
+margin: 60px 0 ;
+}
+.box-settings .container h4 {
+
+}
+.box-settings .container span{
+    width: 80%;
+    height: 2px;
+    background-color: #2c4755;
+    display: block;
+    position: absolute;
+    
+}
+.box-settings .container i {
+    color: #2c4755;
+    position: absolute;
+    right: -15px;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+.UP {
+    font-size: 40px;
+    position: fixed;
+    bottom: 10px;
+    right: -60px;
+    color: var(--main-color);
+    background-color:#0000007c;
+    cursor: pointer;
+}
+.UP.show{
+    right: 10px;
+}
+
+
+
+
